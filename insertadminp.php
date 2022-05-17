@@ -1,14 +1,14 @@
 <?php
 include './proc/conexion.php';
 
-$DNI1=$_POST['logDNI'];
-$nombre1=$_POST['lognombre'];
-$apellido1=$_POST['logapellido1'];
-$apellido2=$_POST['logapellido2'];
-$email1=$_POST['logemail'];
-$telf1=$_POST['logtelf'];
-$clase1=$_POST['logclase'];
-$pass1=$_POST['logpass'];
+
+$nombre1=$_POST['log1nombre'];
+$apellido1=$_POST['log1apellido1'];
+$apellido2=$_POST['log1apellido2'];
+$email1=$_POST['log1email'];
+$telf1=$_POST['log1telf'];
+$dept1=$_POST['log1dept'];
+$pass1=$_POST['log1pass'];
 // $foto=$_POST['foto'];
 // var_dump($_FILES);
 
@@ -35,10 +35,9 @@ $pass1=$_POST['logpass'];
 
 
 
-$sql = "INSERT INTO tbl_alumne (dni_alu, nom_alu, cognom1_alu,cognom2_alu, email_alu, telf_alu, classe, passwd_alu) VALUES ('$DNI1', '$nombre1', '$apellido1','$apellido2', '$email1', '$telf1','$clase1','$pass1');";
+$sql = "INSERT INTO tbl_professor (nom_prof, cognom1_prof,cognom2_prof, email_prof, telf, dept, passwd_prof) VALUES ('$nombre1', '$apellido1','$apellido2', '$email1', '$telf1','$dept1','$pass1');";
 $insert = mysqli_query($connection, $sql);
- echo "<script type=\"text/javascript\">alert(\"Usuario '$nombre1' agregado correctamente\");</script>"; 
- header("Location: ./admin.php")
+header("Location: ./admin.php");
  ?>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>

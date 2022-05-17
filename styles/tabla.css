@@ -9,7 +9,7 @@
 
 body {
     background: rgb(253, 29, 83);
-    background: linear-gradient(90deg, rgba(253, 29, 83, 1) 27%, rgba(255, 55, 103, 1) 79%);
+    background: linear-gradient(0deg, rgba(253, 29, 83, 1) 27%, rgba(249, 249, 249, 1) 79%);
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -45,4 +45,8 @@ tbody tr {
 
 tbody tr:hover {
     background: #014055;
+}
+
+.d-flex {
+    padding-left: 65%;
 }

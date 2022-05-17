@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./styles/style.css">
     <title>Document</title>
 </head>
 <body>
     <?php
 
-        include 'conexion.php';
-        $sql = "DELETE FROM tbl_alumne WHERE id_alumne={$_GET['id_alumne']}";
+        include './proc/conexion.php';
+        $id=$_GET['id'];
+        $sql = "DELETE FROM tbl_alumne WHERE id_alumne=$id;";
         $delete = mysqli_query($connection, $sql);
 
     ?>
@@ -18,7 +20,7 @@
     <script>
         function aviso(url) {
             swal.fire ({
-                title: 'Animal borrado',
+                title: 'Registro borrado',
                 icon: 'success',
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'Volver'

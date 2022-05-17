@@ -1,10 +1,12 @@
 create database bd_escuela;
 use bd_escuela;
-CREATE TABLE IF NOT EXISTS tbl_admin(
-    id_admin int(5) NOT NULL AUTO_INCREMENT,
+
+CREATE TABLE tbl_admin(
+    id_admin int(5) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     email_admin varchar(50) NULL,
     passwd_admin varchar(40) NULL
 );
+
 CREATE TABLE IF NOT EXISTS tbl_professor(
 	id_professor int(5) NOT NULL AUTO_INCREMENT,
 	nom_prof varchar (20) NOT NULL,
@@ -64,6 +66,9 @@ ALTER TABLE tbl_professor
 
 
 /*INSERT ALUMNOS*/
+INSERT INTO tbl_admin(`email_admin`, `passwd_admin`) VALUES ("admin@admin.com","asdASD123");
+
+
 
 INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	47269199J	","	Juan	","	García	","	Sánchez	","	648351293	","	Juan@gmail.com	",5,"	1234	");
 INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	26437959B	","	Antonio	","	Cruz	","	Álvarez	","	678713292	","	Antonio@gmail.com	",1,"	1234	");
@@ -110,6 +115,8 @@ INSERT INTO tbl_professor(`nom_prof`,`cognom1_prof`,`cognom2_prof`,`email_prof`,
 INSERT INTO tbl_professor(`nom_prof`,`cognom1_prof`,`cognom2_prof`,`email_prof`,`telf`,`dept`,`passwd_prof`) VALUES("Joel","Cruz","Álvarez","Joel@gmail.com","79250",2,"1234");
 INSERT INTO tbl_professor(`nom_prof`,`cognom1_prof`,`cognom2_prof`,`email_prof`,`telf`,`dept`,`passwd_prof`) VALUES("David","Álvarez","Gómez","David@gmail.com",3,"98255","1234");
 INSERT INTO tbl_professor(`nom_prof`,`cognom1_prof`,`cognom2_prof`,`email_prof`,`telf`,`dept`,`passwd_prof`) VALUES("Ian","Gómez","Cruz","Ian@gmail.com","67906",3,"1234");
+
+
 
 
 INSERT INTO tbl_dept(`codi_dept`,`nom_dept`) VALUES("2000","ASIX");
