@@ -12,7 +12,7 @@
     $_SESSION['login']=false;
 ?>
 <!-- partial:index.partial.html -->
-<form class="login"  action="proc/proc_login.php" method="post">
+<form class="login"  action="proc/proc_login.php"  method="post">
   <input type="email" placeholder="Email" name="logemail">
   <input type="password" placeholder="Password" name= "logpass">
   <button name="insesion" type="submit">Login</button>

@@ -66,7 +66,7 @@ ALTER TABLE tbl_professor
 
 
 /*INSERT ALUMNOS*/
-INSERT INTO tbl_admin(`email_admin`, `passwd_admin`) VALUES ("admin@admin.com","asdASD123");
+INSERT INTO tbl_admin(`email_admin`, `passwd_admin`) VALUES ("admin@admin.com","401c53225073e49ad5cdeb11fc25a9ffb76257a8");
 
 
 

@@ -100,16 +100,19 @@ foreach ($listadodept as $alumno) {
     echo "<td>{$alumno['classe']}</td>";
     echo "<td>{$alumno['telf_alu']}</td>";
     echo "<td>{$alumno['passwd_alu']}</td>";
-    ?>
-    <td><button type="button" class="btn btn-danger" onClick="aviso('borrar.php?id=<?php echo $alumno['id_alumne']; ?>')" >Borrar</button></td>
-   
-    <td><button class="btn btn-primary" onClick="aviso('modificar.php?id=<?php echo $alumno['id_alumne']; ?>')">Modificar</button></td>
 
-    <td><button type="button" class="btn btn-warning" onClick="aviso('borrar.php?id=<?php echo $alumno['id_alumne']; ?>')" >Email</button></td>
-    <?php
+  if (!$_SESSION['login2']) {
+    echo "<td><button type='button' class='btn btn-danger' onClick=\"aviso('borrar.php?id={$alumno['id_alumne']};')\" >Borrar</button></td>";
+   
+    echo "<td><button class='btn btn-primary' onClick='aviso('modificar.php?id={$alumno['id_alumne']};')'>Modificar</button></td>";
+
+    echo "<td><button type='button' class='btn btn-warning' onClick='aviso('borrar.php?id={$alumno['id_alumne']};')'>Email</button></td>";
+    
+  }  
 }
     echo '</table>';
 ?>
+
     <script>
 
     function aviso(url) {
