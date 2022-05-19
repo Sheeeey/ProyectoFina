@@ -17,7 +17,7 @@ table {
     background: #012B39;
     border-radius: 0.25em;
     border-collapse: collapse;
-    margin: 7em;
+    margin: 5.5em;
 }
 
 th {
@@ -25,7 +25,7 @@ th {
     color: #E2B842;
     font-size: 0.85em;
     font-weight: 600;
-    padding: 0.5em 4em;
+    padding: 0.5em 5em;
     text-align: center;
 }
 

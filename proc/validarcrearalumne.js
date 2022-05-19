@@ -1,12 +1,13 @@
 var validaFormulario = function() {
     //DNI
-    if (document.formulario.logDNI.value.length == 0) {
-        alert("Tiene que escribir su DNI")
-        document.formulario.logDNI.focus()
-        return 0;
+    campo = document.getElementById('logDNI');
+    valor = campo.value;
+    if (valor == null || valor.length == 0 || /^\s+$/.test(valor)) {
+        alert("Debe introducir su nombre");
+        campo.style.backgroundColor = "red";
+        campo.focus();
+        return false;
     }
-
-    dni = document.getElementById("logDNI").value;
     var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
     //num
     if (!(/^\d{8}[A-Z]$/.test(dni))) {
@@ -21,13 +22,14 @@ var validaFormulario = function() {
     }
 
     //Nombre
+    nombre = document.getElementById("lognombre").value;
     if (document.formulario.lognombre.value.length == 0) {
         alert("Tiene que escribir su nombre")
         document.formulario.lognombre.focus()
         return 0;
     }
 
-    nombre = document.getElementById("lognombre").value;
+
     if (/^([0-9])*$/.test(nombre)) {
         alert("El valor " + nombre + " no es una letra");
         document.getElementById("lognombre").focus();
@@ -89,3 +91,4 @@ var validaFormulario = function() {
         return false;
     }
 }
+alert('hola');

@@ -25,7 +25,7 @@ th {
     color: #E2B842;
     font-size: 0.85em;
     font-weight: 600;
-    padding: 0.5em 2.5em;
+    padding: 0.5em 2.8em;
     text-align: left;
 }
 
@@ -48,5 +48,70 @@ tbody tr:hover {
 }
 
 .d-flex {
-    padding-left: 57%;
+    padding-left: 70%;
+}
+
+
+/*Fondo admin.php*/
+
+body {
+    background: -webkit-gradient(linear, left top, left bottom, from(coral), to(rebeccapurple));
+    background: linear-gradient(coral, rebeccapurple);
+}
+
+.grid {
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    -webkit-perspective: 600px;
+    perspective: 600px;
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+    grid-gap: 20px;
+    max-width: 480px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.grid div {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 20px;
+    color: transparent;
+    box-shadow: 30px 30px 30px -20px rgba(0, 0, 0, 0.6);
+    border-radius: 2px;
+}
+
+.grid div:nth-child(odd) {
+    -webkit-animation: 1000ms ease-in-out infinite alternate pulse;
+    animation: 1000ms ease-in-out infinite alternate pulse;
+}
+
+.grid div:nth-child(even) {
+    -webkit-animation: 1000ms 1000ms ease-in-out infinite alternate pulse;
+    animation: 1000ms 1000ms ease-in-out infinite alternate pulse;
+}
+
+.tabla-filtro {
+    padding-left: 6.5%;
+}
+
+@-webkit-keyframes pulse {
+    to {
+        -webkit-transform: translate3d(0px, 0px, -60px);
+        transform: translate3d(0px, 0px, -60px);
+        box-shadow: 15px 15px 20px -20px rgba(0, 0, 0, 0.8);
+    }
+}
+
+@keyframes pulse {
+    to {
+        -webkit-transform: translate3d(0px, 0px, -60px);
+        transform: translate3d(0px, 0px, -60px);
+        box-shadow: 15px 15px 20px -20px rgba(0, 0, 0, 0.8);
+    }
+}
+
+.paddingl {
+    padding-left: 5.5%;
 }

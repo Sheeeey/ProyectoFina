@@ -11,7 +11,7 @@
 <body>
     <h2></h2>
 <!-- partial:index.partial.html -->
-<form class="login" name="formulario"  action="./insertadmin.php" method="post">
+<form class="login" name="formulario"  action=".insertadmin.php" method="post">
     <H3>CREAR ALUMNO</H3>
     <input type="text" placeholder="DNI" name="logDNI">
     <input type="text" placeholder="Nombre" name="lognombre">

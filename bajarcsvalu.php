@@ -16,24 +16,12 @@ include './proc/conexion.php';
 $comprobar= "SELECT * FROM tbl_alumne;";
 $cons = mysqli_query($connection,$comprobar);
 
-if(!file_exists("bajarusuario.csv")){
-    file_put_contents("bajarusuario.csv","DNI;Nombre;1r Apellido;2n Apellido;Correo;Clase:Telefono;Contrasena \n");
+if(!file_exists("bajarusuariosalu.csv")){
+    file_put_contents("bajarusuariosalu.csv","DNI;Nombre;1r Apellido;2n Apellido;Correo;Clase:Telefono;Contrasena \n");
 } 
 foreach ($cons as $value) {
 
-file_put_contents("bajarusuario.csv","{$value['dni_alu']};{$value['nom_alu']};{$value['cognom1_alu']};{$value['cognom2_alu']};{$value['email_alu']};{$value['classe']};{$value['telf_alu']};{$value['passwd_alu']} \n",FILE_APPEND);
-
-}
-
-$comprobar= "SELECT * FROM tbl_professor;";
-$cons = mysqli_query($connection,$comprobar);
-
-if(!file_exists("bajarusuario.csv")){
-    file_put_contents("bajarusuario.csv","DNI;Nombre;1r Apellido;2n Apellido;Correo;Clase:Telefono;Contrasena \n");
-} 
-foreach ($cons as $value) {
-
-file_put_contents("bajarusuario.csv","{$value['dni_prof']};{$value['nom_prof']};{$value['cognom1_prof']};{$value['cognom2_prof']};{$value['email_prof']};{$value['dept']};{$value['telf']} \n",FILE_APPEND);
+file_put_contents("bajarusuariosalu.csv","{$value['dni_alu']};{$value['nom_alu']};{$value['cognom1_alu']};{$value['cognom2_alu']};{$value['email_alu']};{$value['classe']};{$value['telf_alu']};{$value['passwd_alu']} \n",FILE_APPEND);
 
 }
 
@@ -55,7 +43,7 @@ file_put_contents("bajarusuario.csv","{$value['dni_prof']};{$value['nom_prof']};
                     })
             }
 
-            aviso('./admin.php');
+            aviso('./adminalu.php');
         </script>
 </body>
 </html>

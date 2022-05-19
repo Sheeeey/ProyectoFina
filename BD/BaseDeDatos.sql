@@ -9,11 +9,12 @@ CREATE TABLE tbl_admin(
 
 CREATE TABLE IF NOT EXISTS tbl_professor(
 	id_professor int(5) NOT NULL AUTO_INCREMENT,
+	dni_prof varchar(9) NULL,
 	nom_prof varchar (20) NOT NULL,
 	cognom1_prof varchar (20) NULL,
 	cognom2_prof varchar (20) NULL,
 	email_prof varchar(50) NULL,
-	telf varchar (5) NULL, /* Son les extensions, per exemple: 32256*/
+	telf int (9) NULL, /* Son les extensions, per exemple: 32256*/
 	dept int(5) NOT NULL,
     passwd_prof varchar(50) NULL,
 	constraint pk_professor PRIMARY KEY (id_professor)
@@ -105,16 +106,18 @@ INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_al
 
 
 INSERT INTO tbl_classe(`codi_classe`,`nom_classe`,`tutor`) VALUES("1000","ASIX1",1);
-INSERT INTO tbl_classe(`codi_classe`,`nom_classe`,`tutor`) VALUES("1001","ASIX2",1);
-INSERT INTO tbl_classe(`codi_classe`,`nom_classe`,`tutor`) VALUES("1002","SMX1",3);
-INSERT INTO tbl_classe(`codi_classe`,`nom_classe`,`tutor`) VALUES("1003","DAW2",2);
-INSERT INTO tbl_classe(`codi_classe`,`nom_classe`,`tutor`) VALUES("1004","SMX2",3);
+INSERT INTO tbl_classe(`codi_classe`,`nom_classe`,`tutor`) VALUES("1001","ASIX2",2);
+INSERT INTO tbl_classe(`codi_classe`,`nom_classe`,`tutor`) VALUES("1002","SMX1",5);
+INSERT INTO tbl_classe(`codi_classe`,`nom_classe`,`tutor`) VALUES("1003","DAW2",3);
+INSERT INTO tbl_classe(`codi_classe`,`nom_classe`,`tutor`) VALUES("1004","SMX2",5);
 
-INSERT INTO tbl_professor(`nom_prof`,`cognom1_prof`,`cognom2_prof`,`email_prof`,`telf`,`dept`,`passwd_prof`) VALUES("Ricardo","Martínez","Jimenez","Ricardo@gmail.com","82756",1,"1234");
-INSERT INTO tbl_professor(`nom_prof`,`cognom1_prof`,`cognom2_prof`,`email_prof`,`telf`,`dept`,`passwd_prof`) VALUES("Oriol","Jimenez","Martínez","Oriol@gmail.com","32256",1,"1234");
-INSERT INTO tbl_professor(`nom_prof`,`cognom1_prof`,`cognom2_prof`,`email_prof`,`telf`,`dept`,`passwd_prof`) VALUES("Joel","Cruz","Álvarez","Joel@gmail.com","79250",2,"1234");
-INSERT INTO tbl_professor(`nom_prof`,`cognom1_prof`,`cognom2_prof`,`email_prof`,`telf`,`dept`,`passwd_prof`) VALUES("David","Álvarez","Gómez","David@gmail.com",3,"98255","1234");
-INSERT INTO tbl_professor(`nom_prof`,`cognom1_prof`,`cognom2_prof`,`email_prof`,`telf`,`dept`,`passwd_prof`) VALUES("Ian","Gómez","Cruz","Ian@gmail.com","67906",3,"1234");
+-- contraseña profesores encriptada= 1234
+
+INSERT INTO tbl_professor(`dni_prof`,`nom_prof`,`cognom1_prof`,`cognom2_prof`,`email_prof`,`telf`,`dept`,`passwd_prof`) VALUES("45677798R","Ricardo","Martínez","Jimenez","ricardo@gmail.com","602782756",1,"2");
+INSERT INTO tbl_professor(`dni_prof`,`nom_prof`,`cognom1_prof`,`cognom2_prof`,`email_prof`,`telf`,`dept`,`passwd_prof`) VALUES("23466678T","Oriol","Jimenez","Martínez","oriol@gmail.com","623032256",1,"7110eda4d09e062aa5e4a390b0a572ac0d2c0220");
+INSERT INTO tbl_professor(`dni_prof`,`nom_prof`,`cognom1_prof`,`cognom2_prof`,`email_prof`,`telf`,`dept`,`passwd_prof`) VALUES("21433365U","Joel","Cruz","Álvarez","joel@gmail.com","690179250",2,"7110eda4d09e062aa5e4a390b0a572ac0d2c0220");
+INSERT INTO tbl_professor(`dni_prof`,`nom_prof`,`cognom1_prof`,`cognom2_prof`,`email_prof`,`telf`,`dept`,`passwd_prof`) VALUES("76500098V","David","Álvarez","Gómez","david@gmail.com","654985255",2,"7110eda4d09e062aa5e4a390b0a572ac0d2c0220");
+INSERT INTO tbl_professor(`dni_prof`,`nom_prof`,`cognom1_prof`,`cognom2_prof`,`email_prof`,`telf`,`dept`,`passwd_prof`) VALUES("56894445Y","Ian","Gómez","Cruz","ian@gmail.com","679123506",3,"7110eda4d09e062aa5e4a390b0a572ac0d2c0220");
 
 
 

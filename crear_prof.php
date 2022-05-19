@@ -12,6 +12,7 @@
     <h2></h2>
     <form class="login" name="formulario"  action="./insertadminp.php" method="post">
     <H3>CREAR PROFESOR</H3>
+    <input type="text" placeholder="DNI" name="log1DNI">
     <input type="text" placeholder="Nombre" name="log1nombre">
     <input type="text" placeholder="1r Apellido" name="log1apellido1">
     <input type="text" placeholder="2n Apellido" name="log1apellido2">

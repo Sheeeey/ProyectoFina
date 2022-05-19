@@ -30,7 +30,7 @@
     <script>
         function aviso(url) {
             Swal.fire({
-                    title: 'Alumno modificado',
+                    title: 'Registro modificado',
                     icon: 'success',
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'Volver'

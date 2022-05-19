@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-<!--<a name="profbut" type="button" class="btn btn-primary">Profesores</a>
+<a name="profbut" type="button" class="btn btn-primary">Profesores</a>
 <a name="alubut" type="button" class="btn btn-primary">Alumnos</a>
 <?php
 session_start();
@@ -84,7 +84,7 @@ if(isset($boton1)) {
     
         <td><button class="btn btn-primary" onClick="aviso('modificar.php?id=<?php echo $professor['id_professor']; ?>')">Modificar</button></td>
 
-        <td><button type="button" class="btn btn-warning" onClick="aviso('borrar.php?id=<?php echo $professor['id_professor']; ?>')" >Email</button></td>-->
+        <td><button type="button" class="btn btn-warning" onClick="aviso('borrar.php?id=<?php echo $professor['id_professor']; ?>')" >Email</button></td>
         <?php
     }
 }

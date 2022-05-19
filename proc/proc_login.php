@@ -14,7 +14,7 @@
         if (isset($_POST['logemail']) && isset($_POST['logpass'])){
             $email = $_POST['logemail'];
             $pwd = sha1($_POST['logpass']);
-            $pwdprof = ($_POST['logpass']);
+            $pwdprof = sha1($_POST['logpass']);
             $result = mysqli_query($connection,"SELECT COUNT(1) AS 'administradores' FROM tbl_admin WHERE email_admin = '$email' AND passwd_admin = '$pwd'");
             $resultp = mysqli_query($connection,"SELECT COUNT(1) AS 'profesores' FROM tbl_professor WHERE email_prof = '$email' AND passwd_prof = '$pwdprof'");
             $_SESSION['login']=false;
