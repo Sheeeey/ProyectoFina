@@ -67,61 +67,63 @@ ALTER TABLE tbl_professor
 
 
 /*INSERT ALUMNOS*/
-INSERT INTO tbl_admin(`email_admin`, `passwd_admin`) VALUES ("admin@admin.com","401c53225073e49ad5cdeb11fc25a9ffb76257a8");
+-- psswd admin = mshMsh123
+
+INSERT INTO tbl_admin(`email_admin`, `passwd_admin`) VALUES ("admin@admin.com","72fc3cbf5619bc0b8a8b0380675efef9c0ca6bf5");
 
 
 
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	47269199J	","	Juan	","	García	","	Sánchez	","	648351293	","	Juan@gmail.com	",5,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	26437959B	","	Antonio	","	Cruz	","	Álvarez	","	678713292	","	Antonio@gmail.com	",1,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	28315818N	","	Mario	","	Sánchez	","	Ruiz	","	683765412	","	Mario@gmail.com	",4,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	88981651X	","	Sheila	","	Ruiz	","	Cruz	","	693946317	","	Sheila@gmail.com	",3,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	16977586K	","	Hugo	","	Álvarez	","	Gómez	","	636412153	","	Hugo@gmail.com	",5,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	57391621C	","	Carla	","	Martínez	","	García	","	647197637	","	Carla@gmail.com	",2,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	21669439N	","	Lola	","	Martínez	","	García	","	634798119	","	Lola@gmail.com	",1,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	95566362M	","	Carlos	","	Jimenez	","	Cruz	","	652693926	","	Carlos@gmail.com	",5,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	78147933M	","	Andrés	","	Martínez	","	Jimenez	","	656656868	","	Andrés@gmail.com	",2,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	15516884A	","	Pol	","	Gómez	","	Jimenez	","	661114253	","	Pol@gmail.com	",3,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	69423329Z	","	Sergio	","	Ruiz	","	Fernández	","	647243678	","	Sergio@gmail.com	",4,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	22648944Q	","	David	","	Gómez	","	Fernández	","	647695444	","	David@gmail.com	",3,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	14841385Z	","	Héctor	","	Álvarez	","	Fernández	","	678761978	","	Héctor@gmail.com	",4,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	82755225Y	","	Guillem	","	Jimenez	","	Martínez	","	679672391	","	Guillem@gmail.com	",2,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	31161225C	","	Alex	","	Jimenez	","	Ruiz	","	665213711	","	Alex@gmail.com	",2	,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	27472486K	","	Raúl	","	Ruiz	","	García	","	631945713	","	Raúl@gmail.com	",	3	,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	34367215V	","	Wilson	","	Ruiz	","	Sánchez	","	625997525	","	Wilson@gmail.com	",	1	,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	48558345D	","	Jin	","	Gómez	","	Martínez	","	652862954	","	Jin@gmail.com	",2	,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	82541427Q	","	Pablo	","	Gómez	","	Ruiz	","	669726756	","	Pablo@gmail.com	",3	,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	19816914E	","	Ricardo	","	Jimenez	","	Álvarez	","	621619237	","	Ricardo@gmail.com	",	3	,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	96599783J	","	Joel	","	Cruz	","	Martínez	","	692846446	","	Joel@gmail.com	",	1	,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	35795377V	","	Lucas	","	Fernández	","	Sánchez	","	693866863	","	Lucas@gmail.com	",	3	,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	25437931T	","	Alvaro	","	Cruz	","	Sánchez	","	644563886	","	Alvaro@gmail.com	",	4	,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	53728717G	","	María	","	Martínez	","	Martínez	","	667717945	","	María@gmail.com	",	3	,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	24141393H	","	Alex	","	Gómez	","	Sánchez	","	624634588	","	Alex@gmail.com	",	1	,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	49735464B	","	Paula	","	Ruiz	","	Ruiz	","	698743886	","	Paula@gmail.com	",	5	,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	65422556E	","	Judit	","	Gómez	","	Sánchez	","	667749886	","	Judit@gmail.com	",	4	,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	77296539W	","	Ian	","	Jimenez	","	Álvarez	","	672949423	","	Ian@gmail.com	",	1	,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	29721929H	","	Adrián	","	Ruiz	","	Ruiz	","	672482268	","	Adrián@gmail.com	",	5	,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	36996188K	","	Manel	","	Martínez	","	López	","	647544656	","	Manel@gmail.com	",	4	,"	1234	");
-INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	31633695R	","	Oriol	","	Jimenez	","	Fernández	","	643769747	","	Oriol@gmail.com	",	5	,"	1234	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	47269199J	","	Juan	","	García	","	Sánchez	","	648351293	","	Juan@gmail.com	",5,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	26437959B	","	Antonio	","	Cruz	","	Álvarez	","	678713292	","	Antonio@gmail.com	",1,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	28315818N	","	Mario	","	Sánchez	","	Ruiz	","	683765412	","	Mario@gmail.com	",4,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	88981651X	","	Sheyla	","	Ruiz	","	Cruz	","	693946317	","	Sheyla@gmail.com	",3,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	16977586K	","	Hugo	","	Álvarez	","	Gómez	","	636412153	","	Hugo@gmail.com	",5,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	57391621C	","	Carla	","	Martínez	","	García	","	647197637	","	Carla@gmail.com	",2,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	21669439N	","	Lola	","	Martínez	","	García	","	634798119	","	Lola@gmail.com	",1,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	95566362M	","	Carlos	","	Jimenez	","	Cruz	","	652693926	","	Carlos@gmail.com	",5,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	78147933M	","	Andrés	","	Martínez	","	Jimenez	","	656656868	","	Andrés@gmail.com	",2,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	15516884A	","	Pol	","	Gómez	","	Jimenez	","	661114253	","	Pol@gmail.com	",3,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	69423329Z	","	Sergio	","	Ruiz	","	Fernández	","	647243678	","	Sergio@gmail.com	",4,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	22648944Q	","	David	","	Gómez	","	Fernández	","	647695444	","	David@gmail.com	",3,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	14841385Z	","	Héctor	","	Álvarez	","	Fernández	","	678761978	","	Héctor@gmail.com	",4,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	82755225Y	","	Guillem	","	Jimenez	","	Martínez	","	679672391	","	Guillem@gmail.com	",2,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	31161225C	","	Alex	","	Jimenez	","	Ruiz	","	665213711	","	Alex@gmail.com	",2	,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	27472486K	","	Raúl	","	Ruiz	","	García	","	631945713	","	Raúl@gmail.com	",	3	,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	34367215V	","	Wilson	","	Ruiz	","	Sánchez	","	625997525	","	Wilson@gmail.com	",	1	,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	48558345D	","	Jin	","	Gómez	","	Martínez	","	652862954	","	Jin@gmail.com	",2	,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	82541427Q	","	Pablo	","	Gómez	","	Ruiz	","	669726756	","	Pablo@gmail.com	",3	,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	19816914E	","	Ricardo	","	Jimenez	","	Álvarez	","	621619237	","	Ricardo@gmail.com	",	3	,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	96599783J	","	Joel	","	Cruz	","	Martínez	","	692846446	","	Joel@gmail.com	",	1	,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	35795377V	","	Lucas	","	Fernández	","	Sánchez	","	693866863	","	Lucas@gmail.com	",	3	,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	25437931T	","	Alvaro	","	Cruz	","	Sánchez	","	644563886	","	Alvaro@gmail.com	",	4	,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	53728717G	","	María	","	Martínez	","	Martínez	","	667717945	","	María@gmail.com	",	3	,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	24141393H	","	Alex	","	Gómez	","	Sánchez	","	624634588	","	Alex@gmail.com	",	1	,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	49735464B	","	Paula	","	Ruiz	","	Ruiz	","	698743886	","	Paula@gmail.com	",	5	,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	65422556E	","	Judit	","	Gómez	","	Sánchez	","	667749886	","	Judit@gmail.com	",	4	,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	77296539W	","	Ian	","	Jimenez	","	Álvarez	","	672949423	","	Ian@gmail.com	",	1	,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	29721929H	","	Adrián	","	Ruiz	","	Ruiz	","	672482268	","	Adrián@gmail.com	",	5	,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	36996188K	","	Manel	","	Martínez	","	López	","	647544656	","	Manel@gmail.com	",	4	,"	qweQWE123	");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("	31633695R	","	Oriol	","	Jimenez	","	Fernández	","	643769747	","	Oriol@gmail.com	",	5	,"	qweQWE123	");
 
 
 
-INSERT INTO tbl_classe(`codi_classe`,`nom_classe`,`tutor`) VALUES("1000","ASIX1",1);
-INSERT INTO tbl_classe(`codi_classe`,`nom_classe`,`tutor`) VALUES("1001","ASIX2",2);
-INSERT INTO tbl_classe(`codi_classe`,`nom_classe`,`tutor`) VALUES("1002","SMX1",5);
-INSERT INTO tbl_classe(`codi_classe`,`nom_classe`,`tutor`) VALUES("1003","DAW2",3);
-INSERT INTO tbl_classe(`codi_classe`,`nom_classe`,`tutor`) VALUES("1004","SMX2",5);
+INSERT INTO tbl_classe(`codi_classe`,`nom_classe`,`tutor`) VALUES("1000","G-ALU-ASIX1",1);
+INSERT INTO tbl_classe(`codi_classe`,`nom_classe`,`tutor`) VALUES("1001","G-ALU-ASIX2",2);
+INSERT INTO tbl_classe(`codi_classe`,`nom_classe`,`tutor`) VALUES("1002","G-ALU-SMX1",5);
+INSERT INTO tbl_classe(`codi_classe`,`nom_classe`,`tutor`) VALUES("1003","G-ALU-DAW2",3);
+INSERT INTO tbl_classe(`codi_classe`,`nom_classe`,`tutor`) VALUES("1004","G-ALU-SMX2",5);
 
--- contraseña profesores encriptada= 1234
+-- contraseña profesores encriptada= asdASD123
 
-INSERT INTO tbl_professor(`dni_prof`,`nom_prof`,`cognom1_prof`,`cognom2_prof`,`email_prof`,`telf`,`dept`,`passwd_prof`) VALUES("45677798R","Ricardo","Martínez","Jimenez","ricardo@gmail.com","602782756",1,"2");
-INSERT INTO tbl_professor(`dni_prof`,`nom_prof`,`cognom1_prof`,`cognom2_prof`,`email_prof`,`telf`,`dept`,`passwd_prof`) VALUES("23466678T","Oriol","Jimenez","Martínez","oriol@gmail.com","623032256",1,"7110eda4d09e062aa5e4a390b0a572ac0d2c0220");
-INSERT INTO tbl_professor(`dni_prof`,`nom_prof`,`cognom1_prof`,`cognom2_prof`,`email_prof`,`telf`,`dept`,`passwd_prof`) VALUES("21433365U","Joel","Cruz","Álvarez","joel@gmail.com","690179250",2,"7110eda4d09e062aa5e4a390b0a572ac0d2c0220");
-INSERT INTO tbl_professor(`dni_prof`,`nom_prof`,`cognom1_prof`,`cognom2_prof`,`email_prof`,`telf`,`dept`,`passwd_prof`) VALUES("76500098V","David","Álvarez","Gómez","david@gmail.com","654985255",2,"7110eda4d09e062aa5e4a390b0a572ac0d2c0220");
-INSERT INTO tbl_professor(`dni_prof`,`nom_prof`,`cognom1_prof`,`cognom2_prof`,`email_prof`,`telf`,`dept`,`passwd_prof`) VALUES("56894445Y","Ian","Gómez","Cruz","ian@gmail.com","679123506",3,"7110eda4d09e062aa5e4a390b0a572ac0d2c0220");
-
-
+INSERT INTO tbl_professor(`dni_prof`,`nom_prof`,`cognom1_prof`,`cognom2_prof`,`email_prof`,`telf`,`dept`,`passwd_prof`) VALUES("45677798R","Ricardo","Martínez","Jimenez","ricardo@gmail.com","602782756",1,"401c53225073e49ad5cdeb11fc25a9ffb76257a8");
+INSERT INTO tbl_professor(`dni_prof`,`nom_prof`,`cognom1_prof`,`cognom2_prof`,`email_prof`,`telf`,`dept`,`passwd_prof`) VALUES("23466678T","Oriol","Jimenez","Martínez","oriol@gmail.com","623032256",1,"401c53225073e49ad5cdeb11fc25a9ffb76257a8");
+INSERT INTO tbl_professor(`dni_prof`,`nom_prof`,`cognom1_prof`,`cognom2_prof`,`email_prof`,`telf`,`dept`,`passwd_prof`) VALUES("21433365U","Joel","Cruz","Álvarez","joel@gmail.com","690179250",2,"401c53225073e49ad5cdeb11fc25a9ffb76257a8");
+INSERT INTO tbl_professor(`dni_prof`,`nom_prof`,`cognom1_prof`,`cognom2_prof`,`email_prof`,`telf`,`dept`,`passwd_prof`) VALUES("76500098V","David","Álvarez","Gómez","david@gmail.com","654985255",2,"401c53225073e49ad5cdeb11fc25a9ffb76257a8");
+INSERT INTO tbl_professor(`dni_prof`,`nom_prof`,`cognom1_prof`,`cognom2_prof`,`email_prof`,`telf`,`dept`,`passwd_prof`) VALUES("56894445Y","Ian","Gómez","Cruz","ian@gmail.com","679123506",3,"401c53225073e49ad5cdeb11fc25a9ffb76257a8");
 
 
-INSERT INTO tbl_dept(`codi_dept`,`nom_dept`) VALUES("2000","ASIX");
-INSERT INTO tbl_dept(`codi_dept`,`nom_dept`) VALUES("2001","DAW");
-INSERT INTO tbl_dept(`codi_dept`,`nom_dept`) VALUES("2002","SMX");
+
+
+INSERT INTO tbl_dept(`codi_dept`,`nom_dept`) VALUES("2000","G-PROF-ASIX");
+INSERT INTO tbl_dept(`codi_dept`,`nom_dept`) VALUES("2001","G-PROF-DAW");
+INSERT INTO tbl_dept(`codi_dept`,`nom_dept`) VALUES("2002","G-PROF-SMX");

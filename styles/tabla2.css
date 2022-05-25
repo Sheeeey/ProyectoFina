@@ -25,7 +25,7 @@ th {
     color: #E2B842;
     font-size: 0.85em;
     font-weight: 600;
-    padding: 0.5em 2.8em;
+    padding: 0.5em 2.6em;
     text-align: left;
 }
 
@@ -96,6 +96,31 @@ body {
     padding-left: 6.5%;
 }
 
+.outlinenone {
+    border: 1px solid #DBE1EB;
+    font-size: 12px;
+    font-family: Arial, Verdana;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -o-border-radius: 4px;
+    background: #FFFFFF;
+    background: linear-gradient(left, #FFFFFF, #F7F9FA);
+    background: -moz-linear-gradient(left, #FFFFFF, #F7F9FA);
+    background: -webkit-linear-gradient(left, #FFFFFF, #F7F9FA);
+    background: -o-linear-gradient(left, #FFFFFF, #F7F9FA);
+    color: #2E3133;
+}
+
+.outlinenone:focus {
+    color: #2E3133;
+    border-color: #FBFFAD;
+}
+
 @-webkit-keyframes pulse {
     to {
         -webkit-transform: translate3d(0px, 0px, -60px);
@@ -114,4 +139,11 @@ body {
 
 .paddingl {
     padding-left: 5.5%;
+}
+
+@media screen and (max-width: 600px) {
+    table {
+        display: block;
+        overflow-x: auto;
+    }
 }

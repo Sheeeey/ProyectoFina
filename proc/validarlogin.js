@@ -1,14 +1,16 @@
-var validaFormulario = function() {
+var validarLogin = function() {
     //Email
-    if (document.formulario.element_4.value.length == 0) {
-        alert("Tiene que ser formato correo")
-        document.formulario.element_4.focus()
-        return 0;
-    }
-
-    correo = document.getElementById("element_4").value;
-    if (!(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)/.test(correo))) {
-        alert("Tiene que ser formato correo")
+    valor = document.getElementById("logemail").value;
+    if (!/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(valor)) {
+        alert("Escriba el correo correctamente");
         return false;
     }
+
+
+    passwd = document.getElementById("logpass").value;
+    if (passwd.length == 0) {
+        alert("Tiene que escribir una contraseña")
+        return false;
+    }
+    return true;
 }

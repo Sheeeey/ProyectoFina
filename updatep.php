@@ -12,16 +12,16 @@
     <?php
 
         include './proc/conexion.php';
-        $dni = $_POST['dni_alu'];
-        $nom = $_POST['nom_alu'];
-        $cog1 = $_POST['cognom1_alu'];
-        $cog2 = $_POST['cognom2_alu'];
-        $telf = $_POST['telf_alu'];
-        $email = $_POST['email_alu'];
-        $clase = $_POST['classe'];
+        $dni = $_POST['dni_prof'];
+        $nom = $_POST['nom_prof'];
+        $cog1 = $_POST['cognom1_prof'];
+        $cog2 = $_POST['cognom2_prof'];
+        $telf = $_POST['telf'];
+        $email = $_POST['email_prof'];
+        $clase = $_POST['dept'];
         $id = $_POST['id'];
 
-        $sql = "UPDATE `tbl_alumne` SET `dni_alu` = '$dni', `nom_alu` = '$nom', `cognom1_alu` = '$cog1', `cognom2_alu` = '$cog2', `telf_alu` = '$telf', `email_alu` = '$email', `classe` = '$clase' WHERE `id_alumne`= $id";
+        $sql = "UPDATE `tbl_professor` SET `dni_prof` = '$dni', `nom_prof` = '$nom', `cognom1_prof` = '$cog1', `cognom2_prof` = '$cog2', `telf` = '$telf', `email_prof` = '$email', `dept` = '$clase' WHERE `id_professor`= $id";
         mysqli_query($connection, $sql);
 
     ?>
@@ -42,7 +42,7 @@
                 })
         }
 
-        aviso('./adminalu.php');
+        aviso('./adminp.php');
     </script>
 
 </body>

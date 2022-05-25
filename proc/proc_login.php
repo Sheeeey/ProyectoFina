@@ -24,17 +24,17 @@
                 $_SESSION['login']=true;
                 
                 echo "<script>alert('Bienvenido');</script>";
-                echo "<script> window.location='../admin.php'</script>";
+                echo "<script> window.location='../adminalu.php'</script>";
             }else{
                
             if (mysqli_fetch_assoc($resultp)['profesores'] > 0){
                     $_SESSION['login2']=true;
                     
                     echo "<script>alert('Bienvenido');</script>";
-                    echo "<script> window.location='../admin.php'</script>";
+                    echo "<script> window.location='../adminalu.php'</script>";
             }else{
                     echo "<script>alert('Usuario incorrecto.');</script>";
-                    echo "<script> window.location='../login.php'</script>";
+                    echo "<script> window.location='../index.php'</script>";
     
                 }
 
@@ -44,6 +44,7 @@
         }
 
     }
+
     ?>
 </body>
 </html>

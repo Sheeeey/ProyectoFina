@@ -8,7 +8,7 @@
 </head>
 <body>
     
-    <form action="onexion.php" method="post">
+    <form action="conexion.php" method="post">
 
     <input type="text" name="ip" placeholder="ip o servidor">
      </br>

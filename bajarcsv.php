@@ -25,13 +25,13 @@ file_put_contents("bajarusuario.csv","{$value['dni_alu']};{$value['nom_alu']};{$
 
 }
 
-$comprobar= "SELECT * FROM tbl_professor;";
-$cons = mysqli_query($connection,$comprobar);
+$comprobar1= "SELECT * FROM tbl_professor;";
+$cons1 = mysqli_query($connection,$comprobar1);
 
 if(!file_exists("bajarusuario.csv")){
     file_put_contents("bajarusuario.csv","DNI;Nombre;1r Apellido;2n Apellido;Correo;Clase:Telefono;Contrasena \n");
 } 
-foreach ($cons as $value) {
+foreach ($cons1 as $value) {
 
 file_put_contents("bajarusuario.csv","{$value['dni_prof']};{$value['nom_prof']};{$value['cognom1_prof']};{$value['cognom2_prof']};{$value['email_prof']};{$value['dept']};{$value['telf']} \n",FILE_APPEND);
 
@@ -55,7 +55,7 @@ file_put_contents("bajarusuario.csv","{$value['dni_prof']};{$value['nom_prof']};
                     })
             }
 
-            aviso('./admin.php');
+            aviso('./adminalu.php');
         </script>
 </body>
 </html>

@@ -11,20 +11,31 @@
 <body>
     <h2></h2>
 <!-- partial:index.partial.html -->
-<form class="login" name="formulario"  action=".insertadmin.php" method="post">
+<form class="login" name="formulario"  action="./insertadmin.php" method="post" onsubmit="return validaFormulario();">
     <H3>CREAR ALUMNO</H3>
-    <input type="text" placeholder="DNI" name="logDNI">
-    <input type="text" placeholder="Nombre" name="lognombre">
-    <input type="text" placeholder="1r Apellido" name="logapellido1">
-    <input type="text" placeholder="2n Apellido" name="logapellido2">
-    <input type="email" placeholder="Email" name="logemail">
-    <input type="text" placeholder="Telefono" name="logtelf">
-    <input type="text" placeholder="Clase" name="logclase">
-    <input type="password" placeholder="Password" name= "logpass">
-    <button href="./admin.php" name="insesion" type="submit">Crear</button>
+    <input id="logDNI" type="text" placeholder="DNI" name="logDNI" >
+    <input id="lognombre" type="text" placeholder="Nombre" name="lognombre" >
+    <input id="logapellido1" type="text" placeholder="1r Apellido" name="logapellido1" >
+    <input id="logapellido2" type="text" placeholder="2n Apellido" name="logapellido2">
+    <input id="logemail" type="email" placeholder="Email" name="logemail" >
+    <input id="logtelf" type="text" placeholder="Telefono" name="logtelf" >
+    <select id="logclase" name="logclase">
+      <option value="">--CLASSE--</option>
+      <option value="1">SMX1</option>
+      <option value="2">SMX2</option>
+      <option value="3">ASIX1</option>
+      <option value="4">ASIX2</option>
+      <option value="5">DAW1</option>
+      <option value="6">DAW2</option>
+    </select>
+    <input id="logpass" type="password" placeholder="Password" name= "logpass">
+    <button onclick="return validaFormulario()" name="insesion" type="submit">Crear</button>
 </form>
 
 <a href="https://codepen.io/davinci/" target="_blank">check my other pens</a>
+<div class="paddingt paddingl">
+  <button type="submit" value="Login" onclick="window.history.go(-1)" class="btn btn-outline-dark">Atrás</button>
+</div>
 <!-- partial -->
 <?php
 // if (isset($_GET['msg'])) {

@@ -29,12 +29,12 @@
 				include './proc/conexion.php';
 				$id=$_GET['id'];
 				
-				$sql = "SELECT email_alu FROM tbl_alumne WHERE id_alumne ={$id}";
-				$listadoalu= mysqli_query($connection, $sql);
+				$sql = "SELECT email_prof FROM tbl_professor WHERE id_professor ={$id}";
+				$queryProf= mysqli_query($connection, $sql);
 			
-				foreach ($listadoalu as $alumno) {
+				foreach ($queryProf as $professor) {
 					echo "<div class='input-group mb-3 paddingl paddingr'>";
-					echo	"<input type='email' class='form-control' placeholder='your@email.com' value='{$alumno['email_alu']}' name='customer_email' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-default' required>";
+					echo	"<input type='email' class='form-control' placeholder='your@email.com' value='{$professor['email_prof']}' name='customer_email' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-default' required>";
 					echo "</div>";
 				}
 			?>

@@ -16,22 +16,21 @@
 
         include './proc/conexion.php';
         $id=$_GET['id'];
-        $sql = "SELECT * FROM tbl_alumne WHERE id_alumne=$id;";
+        $sql = "SELECT * FROM tbl_professor WHERE id_professor=$id;";
         $result = mysqli_query($connection, $sql);
         $animal = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
     ?>
 
-    <form  class="login" action="./update.php" method="post">
+    <form  class="login" action="./updatep.php" method="post">
     <H3>MODIFICAR USUARIO</H3>
-        <input type="text" name="dni_alu" placeholder="DNI" required value="<?php echo $animal['dni_alu']; ?>">
-        <input type="text" name="nom_alu" placeholder="Nombre" required value="<?php echo $animal['nom_alu']; ?>">
-        <input type="text" name="cognom1_alu" placeholder="Apellido" required value="<?php echo $animal['cognom1_alu']; ?>">
-        <input type="text" name="cognom2_alu" placeholder="Apellido" required value="<?php echo $animal['cognom2_alu']; ?>">
-        <input type="text" name="telf_alu" placeholder="Telefono" required value="<?php echo $animal['telf_alu']; ?>">
-        <input type="text" name="email_alu" placeholder="Correo" required value="<?php echo $animal['email_alu']; ?>">
-        <input type="text" name="classe" placeholder="Classe" required value="<?php echo $animal['classe']; ?>">
-        <input type="text" name="passwd_alu" placeholder="Password" required value="<?php echo $animal['passwd_alu']; ?>">
+        <input type="text" name="dni_prof" placeholder="DNI" required value="<?php echo $animal['dni_prof']; ?>">
+        <input type="text" name="nom_prof" placeholder="Nombre" required value="<?php echo $animal['nom_prof']; ?>">
+        <input type="text" name="cognom1_prof" placeholder="Apellido" required value="<?php echo $animal['cognom1_prof']; ?>">
+        <input type="text" name="cognom2_prof" placeholder="Apellido" required value="<?php echo $animal['cognom2_prof']; ?>">
+        <input type="text" name="telf" placeholder="Telefono" required value="<?php echo $animal['telf']; ?>">
+        <input type="text" name="email_prof" placeholder="Correo" required value="<?php echo $animal['email_prof']; ?>">
+        <input type="text" name="dept" placeholder="Departamento" required value="<?php echo $animal['dept']; ?>">
         <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
         <input type="submit" value="Modificar">
     </form>

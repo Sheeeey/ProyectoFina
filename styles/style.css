@@ -183,3 +183,19 @@ a {
 .paddingbottom {
     padding-bottom: 30%;
 }
+
+.paddingb {
+    padding-bottom: 5%;
+}
+
+.paddingt {
+    padding-top: 45%;
+}
+
+.paddingl {
+    padding-left: 2%;
+}
+
+.div>button {
+    background-color: #f45b69;
+}

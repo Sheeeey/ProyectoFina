@@ -32,7 +32,7 @@
             })
         }
 
-        aviso('./admin.php');
+        aviso('./adminp.php');
     </script>
 </body>
 </html>

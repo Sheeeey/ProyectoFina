@@ -15,69 +15,82 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid" >
-    <a class="navbar-brand" href="./profeoalu.php">Crear Usuarios</a>
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+  if(!$_SESSION['login2']){
+    echo "<a class='navbar-brand' href='./profeoalu.php'>Crear Usuarios</a>";
+  }
+  ?>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./bajarcsv.php">Bajar CSV</a>
+        <?php
+        if (session_status() == PHP_SESSION_NONE) {
+          session_start();
+        }
+        if(!$_SESSION['login2']){
+          echo "<a class='nav-link active' aria-current='page' href='./bajarcsv.php'>Bajar CSV</a>";
+        }       
+        ?>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="./adminp.php" href="">Profesores</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./adminp.php" href="">Profesores</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./adminalu.php" href="">Alumnos</a>
+          <a class="nav-link" aria-current="page" href="./adminalu.php" href="">Alumnos</a>
         </li>
     
       </ul>
       <form class="d-flex">
         <button class="btn btn-outline-success" onclick="window.location.href = './proc/proc_logout.php'" type="button">Logout</button>
+       
       </form>
+
     </div>
   </div>
 </nav>
 
-
-
+ 
 
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
 if(!$_SESSION['login']){
-    //     echo "<script> window.location='./login.php'</script>";    
+    //     echo "<script> window.location='./index.php'</script>";    
 }
 include './proc/conexion.php';
 ?>
 <br>
 
-<form action="./pro" name="formulario_alu">
+<form action="./proc/filtro_admin.php" name="formulario_alu">
 <div class="tabla-filtro">
-<th><input  type="text" maxlength="20" name="tabla_dni_alu" id="tabla_dni_alu" placeholder="DNI"></th>
+<th><input class="outlinenone" type="text" maxlength="20" name="tabla_dni_alu" id="tabla_dni_alu" placeholder="DNI"></th>
 
-                        <th><input type="text" maxlength="20 " name="tabla_nom_alu" id="tabla_nom_alu" placeholder="Nombre"></th>
+                        <th><input class="outlinenone" type="text" maxlength="20 " name="tabla_nom_alu" id="tabla_nom_alu" placeholder="Nombre"></th>
                         
-                        <th><input type="text" maxlength="20" name="tabla_cognom1_alu" id="tabla_cognom1_alu" placeholder="1r Apellido"></th>
+                        <th><input class="outlinenone" type="text" maxlength="20" name="tabla_cognom1_alu" id="tabla_cognom1_alu" placeholder="1r Apellido"></th>
                       
-                        <th><input type="text" maxlength="20" name="tabla_cognom2_alu" id="tabla_cognom2_alu" placeholder="2n Apellido"></th>
+                        <th><input class="outlinenone" type="text" maxlength="20" name="tabla_cognom2_alu" id="tabla_cognom2_alu" placeholder="2n Apellido"></th>
                        
-                        <th><input type="text" maxlength="20" name="tabla_email_alu" id="tabla_email_alu" placeholder="Correo"></th>
+                        <th><input class="outlinenone" type="text" maxlength="20" name="tabla_email_alu" id="tabla_email_alu" placeholder="Correo"></th>
                        
-                        <th><input type="text" maxlength="20" name="tabla_classe" id="tabla_classe" placeholder="Clase"></th>
+                        <th><input class="outlinenone" type="text" maxlength="20" name="tabla_classe" id="tabla_classe" placeholder="Clase"></th>
                         
-                        <th><input type="text" maxlength="20" name="tabla_telf_alu" id="tabla_telf_alu" placeholder="Telefono"></th>
-                        <th><input type="submit" value="Buscar"></th>
+                        <th><input class="outlinenone" type="text" maxlength="20" name="tabla_telf_alu" id="tabla_telf_alu" placeholder="Telefono"></th>
+                        <th><input class="outlinenone" type="submit" value="Buscar"></th>
                         </div>
                         </form>
 
-                        
+ 
 <?php
-$cantPorPagina = 5;
+$cantPorPagina = 10;
 $sql = "SELECT * FROM tbl_alumne;";
-$consulta= "SELECT c.nom_classe as 'classe'
-FROM tbl_alumne 
-INNER JOIN tbl_classe c 
-ON classe = c.id_classe";
 $queryAnim = mysqli_query($connection, $sql);
 //mysqli_num_rows = cantidad de registros que me devuelve
 $numFilas = mysqli_num_rows($queryAnim);
@@ -98,7 +111,10 @@ else {
 }
 
 //La query final
-$sql2 = "SELECT * FROM tbl_alumne LIMIT $inicioPagina, $cantPorPagina;";
+$sql2 = "SELECT id_alumne, dni_alu, nom_alu, cognom1_alu, cognom2_alu, telf_alu, email_alu, c.nom_classe as 'classe', passwd_alu
+FROM tbl_alumne 
+INNER JOIN tbl_classe c 
+ON classe = c.id_classe LIMIT $inicioPagina, $cantPorPagina;";
 $queryAlu = mysqli_query($connection, $sql2);
 
 //ESTE "FOR" SE PONE DEBAJO DE LA TABLA                         ESTE "FOR" SE PONE DEBAJO DE LA TABLA
@@ -119,6 +135,7 @@ echo'<th>Modificar</th>';
 echo'<th>Email</th>';
 echo '</tr>';
 }
+
 //tabla alumnos
 if(isset($_POST['formulario_alu'])){
     $sql_query = "SELECT FROM tbl_alumne
@@ -143,16 +160,16 @@ if(isset($_POST['formulario_alu'])){
       echo "<td>{$alumno['cognom1_alu']}</td>";
       echo "<td>{$alumno['cognom2_alu']}</td>";
       echo "<td>{$alumno['email_alu']}</td>";
-      echo "<td>{$consulta['classe']}</td>";
+      echo "<td>{$alumno['classe']}</td>";
       echo "<td>{$alumno['telf_alu']}</td>";
       echo "<td>{$alumno['passwd_alu']}</td>";
   
     if (!$_SESSION['login2']) {
-      echo "<td><button type='button' class='btn btn-danger' onClick=\"aviso('borrar.php?id={$alumno['id_alumne']};')\" >Borrar</button></td>";
+      echo "<td><button type='button' class='btn btn-outline-danger'  onClick=\"aviso('borrar.php?id={$alumno['id_alumne']};')\" >Borrar</button></td>";
      
-      echo "<td><button type='button 'class='btn btn-primary' onClick=\"aviso('modificar.php?id={$alumno['id_alumne']};')\">Modificar</button></td>";
+      echo "<td><button type='button' class='btn btn-outline-primary' onClick=\"aviso('modificar.php?id={$alumno['id_alumne']};')\">Modificar</button></td>";
   
-      echo "<td><button type='button' class='btn btn-warning' onClick=\"aviso('correo.php?id={$alumno['id_alumne']};')\">Email</button></td>";
+      echo "<td><button type='button' class='btn btn-outline-warning' onClick=\"aviso('correo.php?id={$alumno['id_alumne']};')\">Email</button></td>";
       
     }  
   }
@@ -160,17 +177,17 @@ if(isset($_POST['formulario_alu'])){
 }
 
       // echo "<span><a href='admin.php?pag=$i'>$i  |  </a></span>";  //Botones
-    echo" <nav class='paddingl' aria-label='Page navigation example'>
-      <ul class='pagination pg-blue'>
-        <li class='page-item'></li>";
-        for($i=1;$i<=$cantidadPaginas;$i++) {
-          echo "<li class='page-item'><a class='page-link' href='admin.php?pag=$i'>$i</a></li>
-        ";
-    }
-    echo "<li class='page-item'</li>
-      </ul>
-    </nav>
-    ";
+    // echo" <nav class='paddingl' aria-label='Page navigation example'>
+    //   <ul class='pagination pg-blue'>
+    //     <li class='page-item'></li>";
+    //     for($i=1;$i<=$cantidadPaginas;$i++) {
+    //       echo "<li class='page-item'><a class='page-link' href='admin.php?pag=$i'>$i</a></li>
+    //     ";
+    // }
+    // echo "<li class='page-item'</li>
+    //   </ul>
+    // </nav>
+    // ";
 ?>
 <br>
 <br>
@@ -178,51 +195,51 @@ if(isset($_POST['formulario_alu'])){
 <form action="./admin.php" method="POST">
 
 <div class="tabla-filtro">
-<th><input  type="text" maxlength="20" name="tabla_dni_prof" id="tabla_dni_prof" placeholder="DNI"></th>
+<th><input   class="outlinenone"type="text" maxlength="20" name="tabla_dni_prof" id="tabla_dni_prof" placeholder="DNI"></th>
 
-                        <th><input type="text" maxlength="20 " name="tabla_nom_prof" id="tabla_nom_prof" placeholder="Nombre"></th>
+                        <th><input class="outlinenone" type="text" maxlength="20 " name="tabla_nom_prof" id="tabla_nom_prof" placeholder="Nombre"></th>
                         
-                        <th><input type="text" maxlength="20" name="tabla_cognom1_prof" id="tabla_cognom1_prof" placeholder="1r Apellido"></th>
+                        <th><input class="outlinenone" type="text" maxlength="20" name="tabla_cognom1_prof" id="tabla_cognom1_prof" placeholder="1r Apellido"></th>
                       
-                        <th><input type="text" maxlength="20" name="tabla_cognom2_prof" id="tabla_cognom2_prof" placeholder="2n Apellido"></th>
+                        <th><input class="outlinenone" type="text" maxlength="20" name="tabla_cognom2_prof" id="tabla_cognom2_prof" placeholder="2n Apellido"></th>
                        
-                        <th><input type="text" maxlength="20" name="tabla_email_prof" id="tabla_email_prof" placeholder="Correo"></th>
+                        <th><input class="outlinenone" type="text" maxlength="20" name="tabla_email_prof" id="tabla_email_prof" placeholder="Correo"></th>
                        
-                        <th><input type="text" maxlength="20" name="tablaclasse_proff" id="tablaclasse_proff" placeholder="Clase"></th>
+                        <th><input class="outlinenone" type="text" maxlength="20" name="tabla_classe_prof" id="tablaclasse_prof" placeholder="Departamento"></th>
                         
-                        <th><input type="email" maxlength="20" name="tablatelf_profl" id="tablatelf_profl" placeholder="Telefono"></th>
-                      
+                        <th><input class="outlinenone" type="email" maxlength="20" name="tablatelf_profl" id="tablatelf_profl" placeholder="Telefono"></th>
+                        <th><input class="outlinenone" type="submit" value="Buscar"></th>
                         </div>
-                      
-
 <?php
 
-$cantPorPagina = 6;
-$sql = "SELECT * FROM tbl_professor;";
-$queryAnim = mysqli_query($connection, $sql);
+$cantPorPagina1 = 10;
+$sql1 = "SELECT * FROM tbl_alumne;";
+$queryAnim1 = mysqli_query($connection, $sql1);
 //mysqli_num_rows = cantidad de registros que me devuelve
-$numFilas = mysqli_num_rows($queryAnim);
-//                                                               -------------------------------------
-//mostrar el número de registros                                | si lees esto eres un nene malo jeje |
-//echo $numFilas."<br>";                                         -------------------------------------
+$numFilas1 = mysqli_num_rows($queryAnim1);
+//                                                               
+//mostrar el número de registros                              
+//echo $numFilas."<br>";                                       
 
 //Saber la cantidad de páginas según la cantidad de registros por página
-$cantidadPaginas = ceil($numFilas/$cantPorPagina); //CEIL = Redondear al número elevado (ej: 5.1 -> 6)
+$cantidadPaginas1 = ceil($numFilas1/$cantPorPagina1); //CEIL = Redondear al número elevado (ej: 5.1 -> 6)
 
 //Saber si estamos en la página 1 u en otra
 if (empty($_GET["pag"])) {
-    $inicioPagina = 0;
+    $inicioPagina1 = 0;
 }
 else {
-    $inicioPagina = ($_GET["pag"]-1)*$cantPorPagina;
+    $inicioPagina1 = ($_GET["pag"]-1)*$cantPorPagina1;
 }
 
 //La query final
-$sql2 = "SELECT * FROM tbl_professor LIMIT $inicioPagina, $cantPorPagina;";
-$queryAlu = mysqli_query($connection, $sql2);
+$sql1 = "SELECT id_professor, dni_prof, nom_prof, cognom1_prof, cognom2_prof, email_prof, telf, d.nom_dept as 'dept', passwd_prof
+FROM tbl_professor 
+INNER JOIN tbl_dept d 
+ON dept = d.id_dept LIMIT $inicioPagina1, $cantPorPagina1;";
+$queryAlu1 = mysqli_query($connection, $sql1);
 
-$sql1 = "SELECT * FROM tbl_professor;";
-$listadoprof= mysqli_query($connection, $sql1);
+// $sql1 = "SELECT * FROM tbl_professor;";
 
 echo '<table>';
 echo '<tr>';
@@ -241,12 +258,11 @@ echo '</tr>';
 }
 
 
-foreach ($listadoprof as $professor) {
+foreach ($queryAlu1 as $professor) {
       
     // echo $rutacompleta;
     echo '<tr>';
     echo "<td>{$professor['dni_prof']}</td>";
-    echo "<br>";
     echo "<td>{$professor['nom_prof']}</td>";
     echo "<td>{$professor['cognom1_prof']}</td>";
     echo "<td>{$professor['cognom2_prof']}</td>";
@@ -255,9 +271,9 @@ foreach ($listadoprof as $professor) {
     echo "<td>{$professor['dept']}</td>";
     
     if (!$_SESSION['login2']) {
-    echo "<td><button type='button' class='btn btn-danger' onClick=\"aviso('borrarp.php?id={$professor['id_professor']};')\">Borrar</button></td>"; 
-    echo "<td><button type='button' class='btn btn-primary'onClick=\"aviso('modificar.php?id={$professor['id_professor']};')\">Modificar</button></td>";
-    echo "<td><button type='button' class='btn btn-warning' onClick=\"aviso('borrar.php?id={$professor['id_professor']};')\" >Email</button></td>";
+    echo "<td><button type='button' class='btn btn-outline-danger' onClick=\"aviso('borrarp.php?id={$professor['id_professor']};')\">Borrar</button></td>"; 
+    echo "<td><button type='button' class='btn btn-outline-primary'onClick=\"aviso('modificarp.php?id={$professor['id_professor']};')\">Modificar</button></td>";
+    echo "<td><button type='button' class='btn btn-outline-warning' onClick=\"aviso('correo.php?id={$professor['id_professor']};')\" >Email</button></td>";
     }   
 }
 
@@ -267,8 +283,8 @@ echo '</table>';
   <ul class='pagination pg-blue'>
     <li class='page-item'></li>
     ";
-    for($i=1;$i<=$cantidadPaginas;$i++) {
-      echo "<li class='page-item'><a class='page-link' href='adminp.php?pag=$i'>$i</a></li>
+    for($i=1;$i<=$cantidadPaginas1;$i++) {
+      echo "<li class='page-item'><a class='page-link' href='admin.php?pag=$i'>$i</a></li>
     ";
 }
 echo "<li class='page-item'></li>

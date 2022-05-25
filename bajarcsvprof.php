@@ -13,7 +13,10 @@
 
 include './proc/conexion.php';
 
-$comprobar= "SELECT * FROM tbl_professor;";
+$comprobar= "SELECT id_professor, dni_prof, nom_prof, cognom1_prof, cognom2_prof, email_prof, telf, d.nom_dept as 'dept', passwd_prof
+FROM tbl_professor 
+INNER JOIN tbl_dept d
+ON dept = d.id_dept;";
 $cons = mysqli_query($connection,$comprobar);
 
 if(!file_exists("bajarusuariosprof.csv")){

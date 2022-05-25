@@ -15,22 +15,39 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid" >
-    <a class="navbar-brand" href="./profeoalu.php">Crear Usuarios</a>
+  <?php
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+  if(!$_SESSION['login2']){
+    echo "<a class='navbar-brand' href='./profeoalu.php'>Crear Usuarios</a>";
+  }
+  ?>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./bajarcsvalu.php">Bajar CSV</a>
+        <?php
+        if (session_status() == PHP_SESSION_NONE) {
+          session_start();
+        }
+        if(!$_SESSION['login2']){
+          echo "<a class='nav-link active' aria-current='page' href='./bajarcsvalu.php'>Bajar CSV</a>";
+        }       
+        ?>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./adminp.php"href="">Profesores</a>
+          <a class="nav-link" aria-current="page" href="./adminp.php"href="">Profesores</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="./admin.php" href="">Alumnos</a>
         </li>
-    
+        <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
       </ul>
       <form class="d-flex">
         <button class="btn btn-outline-success" onclick="window.location.href = './proc/proc_logout.php'" type="button">Logout</button>
@@ -43,9 +60,11 @@
 
 
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
 if(!$_SESSION['login']){
-    //     echo "<script> window.location='./login.php'</script>";    
+    //     echo "<script> window.location='./index.php'</script>";    
 }
 include './proc/conexion.php';
 ?>
@@ -53,26 +72,26 @@ include './proc/conexion.php';
 
 <form action="./proc/filtro_admin.php">
 <div class="tabla-filtro">
-<th><input  type="text" maxlength="20" name="tabla_dni_alu" id="tabla_dni_alu" placeholder="DNI"></th>
+<th><input class="outlinenone" type="text" maxlength="20" name="tabla_dni_alu" id="tabla_dni_alu" placeholder="DNI"></th>
 
-                        <th><input type="text" maxlength="20 " name="tabla_nom_alu" id="tabla_nom_alu" placeholder="Nombre"></th>
+                        <th><input class="outlinenone" type="text" maxlength="20 " name="tabla_nom_alu" id="tabla_nom_alu" placeholder="Nombre"></th>
                         
-                        <th><input type="text" maxlength="20" name="tabla_cognom1_alu" id="tabla_cognom1_alu" placeholder="1r Apellido"></th>
+                        <th><input class="outlinenone" type="text" maxlength="20" name="tabla_cognom1_alu" id="tabla_cognom1_alu" placeholder="1r Apellido"></th>
                       
-                        <th><input type="text" maxlength="20" name="tabla_cognom2_alu" id="tabla_cognom2_alu" placeholder="2n Apellido"></th>
+                        <th><input class="outlinenone" type="text" maxlength="20" name="tabla_cognom2_alu" id="tabla_cognom2_alu" placeholder="2n Apellido"></th>
                        
-                        <th><input type="text" maxlength="20" name="tabla_email_alu" id="tabla_email_alu" placeholder="Correo"></th>
+                        <th><input class="outlinenone" type="text" maxlength="20" name="tabla_email_alu" id="tabla_email_alu" placeholder="Correo"></th>
                        
-                        <th><input type="text" maxlength="20" name="tabla_classe" id="tabla_classe" placeholder="Clase"></th>
+                        <th><input class="outlinenone" type="text" maxlength="20" name="tabla_classe" id="tabla_classe" placeholder="Clase"></th>
                         
-                        <th><input type="text" maxlength="20" name="tabla_telf_alu" id="tabla_telf_alu" placeholder="Telefono"></th>
-                      
+                        <th><input class="outlinenone" type="text" maxlength="20" name="tabla_telf_alu" id="tabla_telf_alu" placeholder="Telefono"></th>
+                        <th><input class="outlinenone" type="submit" value="Buscar"></th>
                         </div>
                         </form>
 
                         
 <?php
-$cantPorPagina = 7;
+$cantPorPagina = 10;
 $sql = "SELECT * FROM tbl_alumne;";
 $queryAnim = mysqli_query($connection, $sql);
 //mysqli_num_rows = cantidad de registros que me devuelve
@@ -93,7 +112,10 @@ else {
 }
 
 //La query final
-$sql2 = "SELECT * FROM tbl_alumne LIMIT $inicioPagina, $cantPorPagina;";
+$sql2 = "SELECT id_alumne, dni_alu, nom_alu, cognom1_alu, cognom2_alu, telf_alu, email_alu, c.nom_classe as 'classe', passwd_alu
+FROM tbl_alumne 
+INNER JOIN tbl_classe c 
+ON classe = c.id_classe LIMIT $inicioPagina, $cantPorPagina;";
 $queryAlu = mysqli_query($connection, $sql2);
 
 //ESTE "FOR" SE PONE DEBAJO DE LA TABLA                         ESTE "FOR" SE PONE DEBAJO DE LA TABLA
@@ -129,11 +151,11 @@ foreach ($queryAlu as $alumno) {
     echo "<td>{$alumno['passwd_alu']}</td>";
 
   if (!$_SESSION['login2']) {
-    echo "<td><button type='button' class='btn btn-danger' onClick=\"aviso('borrar.php?id={$alumno['id_alumne']};')\" >Borrar</button></td>";
+    echo "<td><button type='button' class='btn btn-outline-danger' onClick=\"aviso('borrar.php?id={$alumno['id_alumne']};')\" >Borrar</button></td>";
    
-    echo "<td><button type='button 'class='btn btn-primary' onClick=\"aviso('modificar.php?id={$alumno['id_alumne']};')\">Modificar</button></td>";
+    echo "<td><button type='button 'class='btn btn-outline-primary' onClick=\"aviso('modificar.php?id={$alumno['id_alumne']};')\">Modificar</button></td>";
 
-    echo "<td><button type='button' class='btn btn-warning' onClick=\"aviso('correo.php?id={$alumno['id_alumne']};')\">Email</button></td>";
+    echo "<td><button type='button' name= 'enviarCorr'class='btn btn-outline-warning' onClick=\"aviso('correo.php?id={$alumno['id_alumne']};')\">Email</button></td>";
     
   }  
 }

@@ -19,5 +19,8 @@
         <a class="navbar-brand" href="./crear_prof.php">Profesor</a>
         <a class="navbar-brand" href="./crear_usuarios.php">Alumno</a>
     </div>
+    <div class="paddingt paddingl">
+        <button type="submit" value="Login" onclick="window.location.href = './adminalu.php'" class="btn btn-outline-dark">Atrás</button>
+    </div>
 </body>
 </html>
