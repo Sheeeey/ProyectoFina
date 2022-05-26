@@ -11,6 +11,15 @@
 </head>
 <body>
 <?php
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+if(!$_SESSION['login']){
+        echo "<script> window.location='./index.php'</script>";    
+}
+include './proc/conexion.php';
+?>
+<?php
     include './proc/conexion.php';
  
 ?>
@@ -100,7 +109,7 @@ for($i=1;$i<=$cantidadPaginas;$i++) {
 }
 
 ?>
-<nav aria-label="Page navigation example">
+<!-- <nav aria-label="Page navigation example">
   <ul class="pagination">
     <li class="page-item"><a class="page-link" href="usuario.php">Previous</a></li>
     <li class="page-item"><a class="page-link" href="usuario.php">1</a></li>
@@ -110,5 +119,5 @@ for($i=1;$i<=$cantidadPaginas;$i++) {
   </ul>
 </nav>
 </body>
-</html>
+</html> -->
 

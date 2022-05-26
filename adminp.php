@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="./styles/tabla2.css">
+    <link rel="shortcut icon" href="./img/admin.svg" type="image/x-icon">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Registro Profesores</title>
 </head>
 <body>
 
@@ -40,16 +41,12 @@ if (session_status() == PHP_SESSION_NONE) {
           
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./admin.php"href="">Profesores</a>
+          <a class="nav-link active" aria-current="page" href="">Profesores</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="./adminalu.php">Alumnos</a>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
       <form class="d-flex">
         <button class="btn btn-outline-success" onclick="window.location.href = './proc/proc_logout.php'" type="button">Logout</button>
       </form>
@@ -61,33 +58,22 @@ if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
 if(!$_SESSION['login']){
-    //     echo "<script> window.location='./index.php'</script>";    
+  if(!$_SESSION['login2']){
+    echo "<script> window.location='./index.php'</script>";    
+  }
+           
 }
 include './proc/conexion.php';
 ?>
 <br>
-<form action="./proc/filtro_admin.php">
-<div class="tabla-filtro">
-<th><input class="outlinenone" type="text" maxlength="20" name="tabla_dni_prof" id="tabla_dni_prof" placeholder="DNI"></th>
+<form action="./adminp.php" class="form" name="formulario_prof" method="POST">
+            <input type="text" class="outlinenone" id="buscar" name="buscar" placeholder="Buscar" style="width: 300px;">
+            <input type="submit" class="outlinenone" role="button" name="ver" value="Ver" area-disabled="true" style="width: 100px;">
+        </form>
+        </div>
+            <?php
 
-                        <th><input class="outlinenone" type="text" maxlength="20 " name="tabla_nom_prof" id="tabla_nom_prof" placeholder="Nombre"></th>
-                        
-                        <th><input class="outlinenone" type="text" maxlength="20" name="tabla_cognom1_prof" id="tabla_cognom1_prof" placeholder="1r Apellido"></th>
-                      
-                        <th><input class="outlinenone" type="text" maxlength="20" name="tabla_cognom2_prof" id="tabla_cognom2_prof" placeholder="2n Apellido"></th>
-                       
-                        <th><input class="outlinenone" type="text" maxlength="20" name="tabla_email_prof" id="tabla_email_prof" placeholder="Correo"></th>
-                       
-                        <th><input class="outlinenone" type="text" maxlength="20" name="tabla_classe_prof" id="tabla_classe_prof" placeholder="Departamento"></th>
-                        
-                        <th><input class="outlinenone" type="text" maxlength="20" name="tablatelf_profl" id="tablatelf_profl" placeholder="Telefono"></th>
-                        <th><input class="outlinenone" type="submit" value="Buscar"></th>
-                        </div>
-                        </form>
-                      
-
-<?php
-
+                    
 $cantPorPagina = 10;
 $sql = "SELECT * FROM tbl_professor;";
 $queryAnim = mysqli_query($connection, $sql);
@@ -109,12 +95,24 @@ else {
 }
 
 //La query final
-$sql = "SELECT id_professor, dni_prof, nom_prof, cognom1_prof, cognom2_prof, email_prof, telf, d.nom_dept as 'dept', passwd_prof
-FROM tbl_professor 
-INNER JOIN tbl_dept d 
-ON dept = d.id_dept LIMIT $inicioPagina, $cantPorPagina;";
-$queryProf = mysqli_query($connection, $sql);
 
+if (isset($_POST['ver'])) {
+
+  $sql="SELECT nom_prof,cognom1_prof,dni_prof,cognom2_prof,telf,email_prof,dept
+  FROM tbl_professor 
+  Where nom_prof LIKE '%".$_POST["buscar"]."%' OR cognom1_prof LIKE '%".$_POST["buscar"]."%'
+  OR dni_prof LIKE '%".$_POST["buscar"]."%'OR cognom2_prof LIKE '%".$_POST["buscar"]."%' 
+  OR telf LIKE '%".$_POST["buscar"]."%'OR email_prof LIKE '%".$_POST["buscar"]."%' 
+  OR dept LIKE '%".$_POST["buscar"]."%'";
+  $queryProf=mysqli_query($connection, $sql);
+}
+else{
+  $sql = "SELECT id_professor, dni_prof, nom_prof, cognom1_prof, cognom2_prof, email_prof, telf, d.nom_dept as 'dept', passwd_prof
+  FROM tbl_professor 
+  INNER JOIN tbl_dept d 
+  ON dept = d.id_dept LIMIT $inicioPagina, $cantPorPagina;";
+  $queryProf = mysqli_query($connection, $sql);
+}
 // $sql1 = "SELECT * FROM tbl_professor;";
 
 

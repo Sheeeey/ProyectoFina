@@ -68,7 +68,7 @@ var validaFormulario = function() {
     //Curso
     indice = document.getElementById("logclase").selectedIndex;
     if (indice == null || indice == 0) {
-        alert("Tiene que seleccionar una clase")
+        alert("Tiene que seleccionar un ítem del desplegable")
         return false;
     }
     //Contraseña

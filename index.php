@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Login</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+  <link rel="shortcut icon" href="./img/login.svg" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet"><link rel="stylesheet" href="./styles/style.css"> 
   <script type="text/javascript" src="./proc/validarlogin.js"></script>
 </head>
@@ -11,6 +12,7 @@
 <?php
     session_start();
     $_SESSION['login']=false;
+    $_SESSION['login2']=false;
 ?>
 
 

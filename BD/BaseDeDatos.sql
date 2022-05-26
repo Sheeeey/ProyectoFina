@@ -127,3 +127,10 @@ INSERT INTO tbl_professor(`dni_prof`,`nom_prof`,`cognom1_prof`,`cognom2_prof`,`e
 INSERT INTO tbl_dept(`codi_dept`,`nom_dept`) VALUES("2000","G-PROF-ASIX");
 INSERT INTO tbl_dept(`codi_dept`,`nom_dept`) VALUES("2001","G-PROF-DAW");
 INSERT INTO tbl_dept(`codi_dept`,`nom_dept`) VALUES("2002","G-PROF-SMX");
+
+
+
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("89379301J","Sheyla","García","Sánchez","648351293","sheylags@gmail.com",4,"qweQWE123");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("89504278P","Pol","García","Artiga","667890524","polga@gmail.com",3,"qweQWE123");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("32050047F","Guillem","Artigau","Jimenez","667890524","guillema@gmail.com",2,"qweQWE123");
+INSERT INTO tbl_alumne(`dni_alu`,`nom_alu`,`cognom1_alu`,`cognom2_alu`, `telf_alu`,`email_alu`,`classe`,`passwd_alu`) VALUES("00780276R","Josh","Santos","Fernandez","600786543","joshsf@gmail.com",1,"qweQWE123");

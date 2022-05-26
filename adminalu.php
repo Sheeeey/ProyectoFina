@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="./styles/tabla2.css">
+    <link rel="shortcut icon" href="./img/admin.svg" type="image/x-icon">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Registro Alumno</title>
 </head>
 <body>
 
@@ -42,13 +43,10 @@ if (session_status() == PHP_SESSION_NONE) {
           <a class="nav-link" aria-current="page" href="./adminp.php"href="">Profesores</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./admin.php" href="">Alumnos</a>
+          <a class="nav-link active" aria-current="page" href="">Alumnos</a>
         </li>
-        <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
       </ul>
+      <!-- Botón logout -->
       <form class="d-flex">
         <button class="btn btn-outline-success" onclick="window.location.href = './proc/proc_logout.php'" type="button">Logout</button>
       </form>
@@ -64,34 +62,28 @@ if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
 if(!$_SESSION['login']){
-    //     echo "<script> window.location='./index.php'</script>";    
+  if(!$_SESSION['login2']){
+    echo "<script> window.location='./index.php'</script>";    
+  }
+           
 }
 include './proc/conexion.php';
+
 ?>
 <br>
 
-<form action="./proc/filtro_admin.php">
-<div class="tabla-filtro">
-<th><input class="outlinenone" type="text" maxlength="20" name="tabla_dni_alu" id="tabla_dni_alu" placeholder="DNI"></th>
+<form action="adminalu.php"  class="form" name="formulario_alu" method="POST">
+  <input type="text" class="outlinenone" id="buscar" name="buscar" placeholder="Buscar" style="width: 300px;">
+  <input type="submit" class="outlinenone" role="button" name="ver" value="Ver" area-disabled="true" style="width: 100px;">
+</form>
 
-                        <th><input class="outlinenone" type="text" maxlength="20 " name="tabla_nom_alu" id="tabla_nom_alu" placeholder="Nombre"></th>
-                        
-                        <th><input class="outlinenone" type="text" maxlength="20" name="tabla_cognom1_alu" id="tabla_cognom1_alu" placeholder="1r Apellido"></th>
-                      
-                        <th><input class="outlinenone" type="text" maxlength="20" name="tabla_cognom2_alu" id="tabla_cognom2_alu" placeholder="2n Apellido"></th>
-                       
-                        <th><input class="outlinenone" type="text" maxlength="20" name="tabla_email_alu" id="tabla_email_alu" placeholder="Correo"></th>
-                       
-                        <th><input class="outlinenone" type="text" maxlength="20" name="tabla_classe" id="tabla_classe" placeholder="Clase"></th>
-                        
-                        <th><input class="outlinenone" type="text" maxlength="20" name="tabla_telf_alu" id="tabla_telf_alu" placeholder="Telefono"></th>
-                        <th><input class="outlinenone" type="submit" value="Buscar"></th>
-                        </div>
-                        </form>
-
-                        
 <?php
-$cantPorPagina = 10;
+
+// Mensaje de número de coincidencias al realizar un filtrado
+
+                        
+//Funcionalidad de la paginación
+$cantPorPagina = 6;
 $sql = "SELECT * FROM tbl_alumne;";
 $queryAnim = mysqli_query($connection, $sql);
 //mysqli_num_rows = cantidad de registros que me devuelve
@@ -110,14 +102,35 @@ if (empty($_GET["pag"])) {
 else {
     $inicioPagina = ($_GET["pag"]-1)*$cantPorPagina;
 }
+$queryAlu = [];
 
 //La query final
-$sql2 = "SELECT id_alumne, dni_alu, nom_alu, cognom1_alu, cognom2_alu, telf_alu, email_alu, c.nom_classe as 'classe', passwd_alu
-FROM tbl_alumne 
-INNER JOIN tbl_classe c 
-ON classe = c.id_classe LIMIT $inicioPagina, $cantPorPagina;";
-$queryAlu = mysqli_query($connection, $sql2);
+if (isset($_POST['ver'])) {
 
+  $sql1="SELECT p.* , pt.nom_classe
+  FROM tbl_alumne p INNER JOIN tbl_classe pt 
+  ON p.classe=pt.id_classe 
+  Where p.nom_alu LIKE '%".$_POST["buscar"]."%' OR p.cognom1_alu LIKE '%".$_POST["buscar"]."%'
+  OR p.dni_alu LIKE '%".$_POST["buscar"]."%' OR p.cognom2_alu LIKE '%".$_POST["buscar"]."%'
+  OR p.telf_alu LIKE '%".$_POST["buscar"]."%' OR p.email_alu LIKE '%".$_POST["buscar"]."%'
+  OR pt.nom_classe LIKE '%".$_POST["buscar"]."%'";
+
+  $queryAlu=mysqli_query($connection, $sql1);
+  
+}
+else {
+  $sql2 = "SELECT id_alumne, dni_alu, nom_alu, cognom1_alu, cognom2_alu, telf_alu, email_alu, c.nom_classe as 'classe', passwd_alu
+  FROM tbl_alumne 
+  INNER JOIN tbl_classe c 
+  ON classe = c.id_classe LIMIT $inicioPagina, $cantPorPagina;";
+  $queryAlu = mysqli_query($connection, $sql2);
+}
+// $numFilas1 = mysqli_num_rows($queryAlu);
+// if ($numfilas1 == 0) {
+//   alert("No hay coincidencias");
+// } else {
+//   alert("Hay ".$numfilas1." coincidencias");
+// }
 //ESTE "FOR" SE PONE DEBAJO DE LA TABLA                         ESTE "FOR" SE PONE DEBAJO DE LA TABLA
 
 echo '<table>';
@@ -130,6 +143,7 @@ echo '<th>Correo</th>';
 echo '<th>Clase</th>';
 echo '<th>Telefono</th>';
 echo '<th>Contraseña</th>';
+// Sesión del administrador que tiene permiso para usar los botones de borrar, modificar y mandar emails
 if (!$_SESSION['login2']){
 echo '<th>Borrar</th>';
 echo'<th>Modificar</th>';
@@ -149,7 +163,7 @@ foreach ($queryAlu as $alumno) {
     echo "<td>{$alumno['classe']}</td>";
     echo "<td>{$alumno['telf_alu']}</td>";
     echo "<td>{$alumno['passwd_alu']}</td>";
-
+  // Sesión del administrador que tiene permiso para usar los botones de borrar, modificar y mandar emails
   if (!$_SESSION['login2']) {
     echo "<td><button type='button' class='btn btn-outline-danger' onClick=\"aviso('borrar.php?id={$alumno['id_alumne']};')\" >Borrar</button></td>";
    
@@ -161,15 +175,17 @@ foreach ($queryAlu as $alumno) {
 }
     echo '</table>';
       // echo "<span><a href='admin.php?pag=$i'>$i  |  </a></span>";  //Botones
+    echo "<div class= 'paginacion'>";
     echo" <nav class='paddingl' aria-label='Page navigation example'>
       <ul class='pagination pg-blue'>
         <li class='page-item'></li>
         ";
         for($i=1;$i<=$cantidadPaginas;$i++) {
           echo "<li class='page-item'><a class='page-link' href='adminalu.php?pag=$i'>$i</a></li>
-        ";
+          ";
         }
       echo "</ul>";
+      echo "<div class= 'paginacion'>";
 
 ?>
 

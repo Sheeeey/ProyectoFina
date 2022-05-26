@@ -124,6 +124,14 @@ p {
     padding-bottom: 3%;
 }
 
+.paddingr2 {
+    padding-right: 93%;
+}
+
+.paddingt {
+    padding-top: 3%;
+}
+
 .login {
     overflow: hidden;
     background-color: white;

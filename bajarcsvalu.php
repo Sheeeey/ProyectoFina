@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
-    <title>Document</title>
+    <title>CSV Alumno</title>
 </head>
 <body>
+    
 
 <?php
 
@@ -27,9 +28,27 @@ foreach ($cons as $value) {
 file_put_contents("bajarusuariosalu.csv","{$value['dni_alu']};{$value['nom_alu']};{$value['cognom1_alu']};{$value['cognom2_alu']};{$value['email_alu']};{$value['classe']};{$value['telf_alu']};{$value['passwd_alu']} \n",FILE_APPEND);
 
 }
+$servidor_ftp="172.24.16.214";
+$usuario_ftp="usuarioftp";
+$passwd_usuarioftp="qweQWE123";
+$file = "bajarusuariosalu.csv";
+$nombre_final = "alumnos.csv";
 
 
-    ?>
+$conexion_ftp = ftp_connect($servidor_ftp);
+
+$sesion_ftp = ftp_login($conexion_ftp, $usuario_ftp, $passwd_usuarioftp);
+
+
+if (ftp_put($conexion_ftp, $nombre_final, $file, FTP_ASCII)) {
+} else {
+   echo "Hay un problema al subir el archivo $file\n";
+   echo "<br><br><a href='adminalu.php'>Volver</a>";
+   exit;
+}
+
+ftp_close($conexion_ftp);
+?>
  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>
             function aviso(url) {

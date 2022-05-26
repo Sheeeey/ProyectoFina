@@ -7,13 +7,14 @@
     <title>Document</title>
 </head>
 <body>
+    
     <?php
 
         include './proc/conexion.php';
         $id=$_GET['id'];
         $sql = "DELETE FROM tbl_professor WHERE id_professor=$id;";
         $delete = mysqli_query($connection, $sql);
-
+        
     ?>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

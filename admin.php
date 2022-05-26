@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,36 +8,36 @@
     <link rel="stylesheet" href="./styles/tabla2.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Registro completo</title>
 </head>
 <body>
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid" >
+  <div class="container-fluid" > -->
 <?php
-if (session_status() == PHP_SESSION_NONE) {
-  session_start();
-}
-  if(!$_SESSION['login2']){
-    echo "<a class='navbar-brand' href='./profeoalu.php'>Crear Usuarios</a>";
-  }
+// if (session_status() == PHP_SESSION_NONE) {
+//   session_start();
+// }
+//   if(!$_SESSION['login2']){
+//     echo "<a class='navbar-brand' href='./profeoalu.php'>Crear Usuarios</a>";
+//   }
   ?>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
+        <li class="nav-item"> -->
         <?php
-        if (session_status() == PHP_SESSION_NONE) {
-          session_start();
-        }
-        if(!$_SESSION['login2']){
-          echo "<a class='nav-link active' aria-current='page' href='./bajarcsv.php'>Bajar CSV</a>";
-        }       
+        // if (session_status() == PHP_SESSION_NONE) {
+        //   session_start();
+        // }
+        // if(!$_SESSION['login2']){
+        //   echo "<a class='nav-link active' aria-current='page' href='./bajarcsv.php'>Bajar CSV</a>";
+        // }       
         ?>
-          </li>
+          <!-- </li>
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="./adminp.php" href="">Profesores</a>
         </li>
@@ -53,20 +53,20 @@ if (session_status() == PHP_SESSION_NONE) {
 
     </div>
   </div>
-</nav>
+</nav> -->
 
  
 
 <?php
-if (session_status() == PHP_SESSION_NONE) {
-  session_start();
-}
-if(!$_SESSION['login']){
-    //     echo "<script> window.location='./index.php'</script>";    
-}
-include './proc/conexion.php';
+// if (session_status() == PHP_SESSION_NONE) {
+//   session_start();
+// }
+// if(!$_SESSION['login']){
+//     //     echo "<script> window.location='./index.php'</script>";    
+// }
+// include './proc/conexion.php';
 ?>
-<br>
+<!-- <br>
 
 <form action="./proc/filtro_admin.php" name="formulario_alu">
 <div class="tabla-filtro">
@@ -85,7 +85,7 @@ include './proc/conexion.php';
                         <th><input class="outlinenone" type="text" maxlength="20" name="tabla_telf_alu" id="tabla_telf_alu" placeholder="Telefono"></th>
                         <th><input class="outlinenone" type="submit" value="Buscar"></th>
                         </div>
-                        </form>
+                        </form> -->
 
  
 <?php

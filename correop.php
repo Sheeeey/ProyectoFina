@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Como Enviar un correo electrónico desde Localhost con PHP | Sistemas Web</title>
+<title>Formulario Correo</title>
 <!-- Custom Theme files -->
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
 <link rel="stylesheet" href="./styles/correo.css">
+<link rel="shortcut icon" href="./img/correo2.png" type="image/x-icon">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <!-- Custom Theme files -->
@@ -17,6 +18,7 @@
 <!--Google Fonts-->
 </head>
 <body class="header">
+
 <!--coact start here-->
 <h1 class="paddingb2" >Formulario de contacto</h1>
 <div class="contact header">
@@ -63,7 +65,7 @@
 		</div>
 		<div class="clear"> </div>
 		</form>
-</div>
+	</div>
 </div>
 <div>
 <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
@@ -78,7 +80,11 @@
 	</g>
 </svg>
 </div>
-<div class="content"></div>
+<div class="content">
+	<div class="paddingt paddingr2">
+        <button type="submit" value="Login" onclick="window.location.href = './adminalu.php'" class="btn btn-outline-dark">Atrás</button>
+    </div>
+</div>
 <!--contact end here-->
 
 

@@ -7,10 +7,12 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
     <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/aluoprof.css">
+    <link rel="shortcut icon" href="./img/elegir.svg" type="image/x-icon">
     
     <title>Elige</title>
 </head>
 <body>
+    
     <div class="bg"></div>
     <div class="bg bg2"></div>
     <div class="bg bg3"></div>

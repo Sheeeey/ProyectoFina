@@ -1,6 +1,6 @@
 
 <?php
-$email=$_POST['customer_email']; //Mail desde donde enviamos
+$email=$_POST['customer_email']; //Mail a donde enviamos
 $nombre=$_POST['customer_name']; //Nombre de la persona que envia
 $asunto=$_POST['subject']; //Subject
 $mensaje=$_POST['message']; //Body
@@ -25,7 +25,7 @@ try {
     $mail->SMTPSecure = 'tls';
     $mail->Port = 587;
     /*Al que se envia*/
-    $mail->setFrom($email,'Mario');
+    $mail->setFrom($email,$nombre);
     $mail->addAddress('proyectoofinal2022@gmail.com');
     $mail->addAddress($email);  
     $mail->isHTML(true);
@@ -34,6 +34,11 @@ try {
     
     $mail->send();
     echo "Mensaje enviado correctamente";
+    ?>
+    <div class="paddingt paddingr2">
+		<button type="submit" value="Login" onclick="window.location.href = '../adminalu.php'" class="btn btn-outline-dark">Atrás</button>
+	</div>
+    <?php
 } catch (Exception $e) {
     echo "Mensaje no enviado";
 }

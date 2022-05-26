@@ -18,6 +18,8 @@ table {
     border-radius: 0.25em;
     border-collapse: collapse;
     margin: 5.5em;
+    table-layout: fixed;
+    position: relative;
 }
 
 th {
@@ -27,12 +29,14 @@ th {
     font-weight: 600;
     padding: 0.5em 2.6em;
     text-align: left;
+    word-wrap: break-word;
 }
 
 td {
     color: #fff;
     font-weight: 400;
     padding: 0.5em 0.5em;
+    word-wrap: break-word;
 }
 
 .disabled td {
@@ -57,6 +61,7 @@ tbody tr:hover {
 body {
     background: -webkit-gradient(linear, left top, left bottom, from(coral), to(rebeccapurple));
     background: linear-gradient(coral, rebeccapurple);
+    background-attachment: fixed;
 }
 
 .grid {
@@ -119,6 +124,17 @@ body {
 .outlinenone:focus {
     color: #2E3133;
     border-color: #FBFFAD;
+}
+
+.paginacion {
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    margin-left: 40px;
+}
+
+.form {
+    padding-left: 6%;
 }
 
 @-webkit-keyframes pulse {
