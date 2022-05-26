@@ -1,17 +1,15 @@
-
 <?php
-$email=$_POST['customer_email']; //Mail a donde enviamos
-$nombre=$_POST['customer_name']; //Nombre de la persona que envia
-$asunto=$_POST['subject']; //Subject
-$mensaje=$_POST['message']; //Body
-
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require 'PHPMailer/Exception.php';
 require 'PHPMailer/PHPMailer.php';
 require 'PHPMailer/SMTP.php';
+
+$email=$_POST['customer_email']; //Mail a donde enviamos
+$nombre=$_POST['customer_name']; //Nombre de la persona que envia
+$asunto=$_POST['subject']; //Subject
+$mensaje=$_POST['message']; //Body
 
 $mail =new PHPMailer(true);
 try {

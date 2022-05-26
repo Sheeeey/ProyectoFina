@@ -30,7 +30,7 @@ file_put_contents("bajarusuariosprof.csv","{$value['dni_prof']};{$value['nom_pro
 }
 
 
-$servidor_ftp="172.24.16.214";
+$servidor_ftp="192.168.1.100";
 $usuario_ftp="usuarioftp";
 $passwd_usuarioftp="qweQWE123";
 $file = "bajarusuariosprof.csv";

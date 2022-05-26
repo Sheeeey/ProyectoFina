@@ -1,6 +1,6 @@
 <?php
 /* Database connection start */
-$servername = "172.24.16.217";
+$servername = "192.168.1.96";
 $username = "admin2";
 $password = "asd_ASD123";
 $dbname = "bd_escuela";

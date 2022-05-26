@@ -28,7 +28,7 @@ foreach ($cons as $value) {
 file_put_contents("bajarusuariosalu.csv","{$value['dni_alu']};{$value['nom_alu']};{$value['cognom1_alu']};{$value['cognom2_alu']};{$value['email_alu']};{$value['classe']};{$value['telf_alu']};{$value['passwd_alu']} \n",FILE_APPEND);
 
 }
-$servidor_ftp="172.24.16.214";
+$servidor_ftp="192.168.1.100";
 $usuario_ftp="usuarioftp";
 $passwd_usuarioftp="qweQWE123";
 $file = "bajarusuariosalu.csv";
